@@ -1,7 +1,7 @@
 ---
 Name: Hosszú Virág Zora
 Neptun: RPK5Q9
-Id: 2026-NP-01
+Id: 2026-NP-02
 ---
 # Játékfejlesztés, procedurális generálás, algoritmusok
 ## brief értelmezése
