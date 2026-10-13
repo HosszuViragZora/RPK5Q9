@@ -68,3 +68,5 @@
 
 ## 8. Kezdeti technikai javaslat
 
+programozó környezet: C#, Unity
+
