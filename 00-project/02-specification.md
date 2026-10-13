@@ -1,4 +1,4 @@
-# Project_outline: [sample linkje]
+# Project_outline: https://github.com/HosszuViragZora/RPK5Q9/blob/master/00-project/01-project-outline.md
 
 ## Comparison of Procedural Map Generation Methods
 
