@@ -37,7 +37,7 @@
 | A felhasználó megnézheti a statisztikákat a 2 pálya generálásáról (pl. eldobott pályák aránya) | A rendszer ezeket tárolja és képes ezeket megjeleníteni | Kötelező |
 | A rendszer megtartja ezeket a statisztikákat | A rendszer képes tárolni ezeket a statisztikákat pár (5) generálásig, mieéőtt törli ezeket | Ajánlott |
 | A felhasználó láthassa a statisztikákat külön-külön is | Nem csak egy közös rendszerbe szedi össze a statisztikákat, külön tárolja ezeket, majd képes grafikusan megjelníteni | Ajánlott |
-| A felhasználó láthasson egy tier-rendszert | A rendszer képes a nem eldobott pályákat külön szempontok alapján egy tier rendszerbe besorolni, ezt grafikusan megjeleníteni | ajánlott |
+| A felhasználó láthasson egy tier-rendszert | A rendszer képes a nem eldobott pályákat külön szempontok alapján egy tier rendszerbe besorolni, ezt grafikusan megjeleníteni | Ajánlott |
 | A felhasználó tudja a tier-besorolás szempontjait állítani | A rendszer képes a leszűkített szempontok alapján tier-rendszerbe tenni a megfelelő pályákat és ezt grafikusan megjeleníteni | Lehetséges |
 | A felhasználó képes kiválasztani melyik szobákat szeretné a generáláshoz használni | A rendszer képes a felhasználó megadása alapján csak az adott szobákat használni a generáláshoz, ez alapján megfelelő pályákat ad vissza és a statisztikai adatokat se rontja el. | Lehetséges |
 | A felhasználó képes a statisztikai adatokat ki-exportálni | A rendszer képes a tárolt adatokat egy felhasználó-barát formátumban elmenthetővé tenni | Ajánlott |
@@ -50,18 +50,18 @@
 | A pálya akkor játszható, ha sikerült start, exit pontot legenerálni (1 tile a "játékos", akkor 3x3 terület szükséges ehhez) | Ezek nélkül nem tudunk bejutni, kijutni a pályáról |
 | A pálya akkor játszható, ha minden szobályába el lehet jutni | Ha üres szobákat generálunk, ahol mondjuk a boss van, és nem tudunk eljutni oda, akkor a pálya kijátszhatatlan |
 | A pálya akkor valid, hogyha elég szobával rendelkezik (min 2) | Ha nincs hely az exit és start letevésének, akkor a pályára nem lehet belépni/elhagyni |
-| A pálya akkor valid, ha nincs benne túl sok szoba.  | Túl sok szoba esetén a játék élvezhetetlen lehet. |
+| A pálya akkor valid, ha nincs benne túl sok szoba.  | A járható padlócsempék (szoba és folyosó aránya) nem haladja meg a teljes pálya méretének 65%-át különben a pálya elveszíti a labritintusos jellegét és egyetlen nyílt üreggé válik. |
 | A kezdőpont és a végpont közötti legrövidebb út hoszsa nem haladja meg két pont közötti légvonalbeli távolság 400%-át |  A játékosnak egy hosszú folyosón való szaladgálás lehet unalmas, és frusztráló játék szempontjából |
 
 ## 6. Nem funkcionális követlemények
 
 | Követelmény | Ellenőrzés módja |
 |:---|:---|
-| Időkorlát a pályák lefutására | A 2 módszer saját módszerei alapján egy körülbelüli idő kiszámolható, ehhez képest mérjük mennyi időnél tartunk. |
-| Algoritmus izoláció. Ha mindkettő egyszerre fut, akkor mindkettőnek legyen lehetősége a CPU-val dolgozni | Rendszerhívások???? |
-| Statiszikai probléma, a kiugró adatok kezelése | Hiba határon kívül eldobjuk az adatot? Vagy hát pont nem, mivel a statisztikát akarjuk kinyerni, akkor is, ha van benne kiugró adat |
-| Szálak. Miközben futnak a generálások, a felhasználó felületnek használhatónak kell maradnia |  |
-| Grafikonok olvashatósága | Skálázható legyen a grafikon |
+| Időkorlát a pályák lefutására | Tömeges futtatás esetén a rendszernek képesnek kell lennie 100 darab standart méretű őálya legenerálására és kielemzésére 10 másodpercen belül, amelyet a beépített stopperóra mér. |
+| Algoritmus izoláció. Ha mindkettő egyszerre fut, akkor mindkettőnek legyen lehetősége a CPU-val dolgozni | Az algortimusok szerepált háttérszálakon (C# task-ok vagy Unity Job System segítségével) futnak izolált stopperórákkal. Így egyidejű, párhuzamos futás esetén sem torzítják egymás processzoridő-mérési eredményeit |
+| Statiszikai probléma, a kiugró adatok kezelése | A rendszer az algoritmusok által generált kiugró adatokat sem dobja el az adatbázisból. Az adatok vizualizációja dobozos diagrammal történik, amely képes a medián értékek mellett az egyedi kiugró pontok különálló ábrázolására. |
+| Felhasználó felület válaszkészsége (szálkezelés) | Miközben futnak a generálások, a felhasználó felületnek használhatónak kell maradnia. A fő szálnak tartania kell a minimum 60 fps képfrissítést és 100ms-on belüli válaszidővel kell reagálni a folyamatot megszíktó leállító gombra |
+| Grafikonok olvashatósága | A statisztikai diagramok tengelyei és faliratai automatikusan skálázódnak a kinyert adatok nagyságrendjáhez, megakadályozva a vizuális elemezk elcsúszását. |
 | Konfigurációs rugalmasság. Bárki tudjon generálást indítani. | ALapvető lehetőségek a fő fülben és lehetőség egy "haladó" módra, amit megnyitva a többi lehetőséghez is hozzáfér |
 
 ## 7. Nyitott kérdések és kockázatok

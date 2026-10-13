@@ -12,7 +12,7 @@ A projekt lényege, kettő procedurális generálási módszer összehasonlítá
 
 ## Hatókör
 
-### Benne van a hatókörben (Ilyesmire gondoltak ez alatt?)
+### Benne van a hatókörben
 * Beszerzett adatok elraktározása, kiértékelése grafikonokkal
 * Eldobott pályák aránya a használhatóhoz képest
 * Pálya méret állítása (egy max és minimum között)
@@ -23,7 +23,7 @@ A projekt lényege, kettő procedurális generálási módszer összehasonlítá
 * Más generálási prodecúra beépítése
 * Komplex grafikai megjelenítás
 
-## Jegyzetek (Kell ide ennyi információ?)
+## Jegyzetek
 
 Az első prototípus terve az, hogy mindkét Generálási módszert ki tudjuk értékelni a saját szempontjaik alapján. Legyenek ezek egyezőek, vagy nem egyezőek. Miután ez megvan, ez után lehet az összehasonlító mechanikán dolgozni.
 
