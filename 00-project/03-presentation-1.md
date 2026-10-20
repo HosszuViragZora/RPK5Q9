@@ -44,10 +44,11 @@
 * Nem használok külső grafikákat
 
 ---
-# Kezdeti felhasználói út
+# Munkafolyamat (User journey)
 
-1. Menü pontok 
-2. Generálás fő folyamata
+1. Navigáció és konfiguráció
+2. Paraméterezés
+3. Generálás fő folyamata
 
 ---
 # Következő lépések
