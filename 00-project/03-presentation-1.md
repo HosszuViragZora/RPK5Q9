@@ -1,4 +1,9 @@
 # Procedúrális Pályagenerációs Módszerek Összehasonlítása
+---
+# Mi az?
+
+* Procedúrális generálási módszerek
+* Reprezentáció
 
 ---
 # Probléma
@@ -31,7 +36,7 @@
 # Tervezett hatókör
 
 * A két generáló algoritmus leprogramozása 
-* BFS (széllesség kereső) validátor 
+* Breadth-First Search (széllesség kereső) validátor 
 * Statisztikai adatexport
 * Grafikus kiértékelés
 
@@ -60,3 +65,16 @@ A Folyamatok pontosabb, technikaibb megvalósításának kidolgozása
 
 * Tier - rendszer
 * Mélyebb személyre szabás
+
+---
+# Források
+
+https://christianjmills.com/posts/procedural-map-generation-techniques-notes/#map-generation-algorithms
+https://www.redblobgames.com/
+https://medium.com/@jason.webb/simulating-dla-in-js-f1914eb04b1d
+
+---
+
+# Köszönöm A figyelmet!
+
+---
