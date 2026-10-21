@@ -1,4 +1,8 @@
 # Procedúrális Pályagenerációs Módszerek Összehasonlítása
+Szerző: Hosszú Virág Zora
+Neptun: RPK5Q9
+Témavezető: Novák Péter
+Projektazonosító:2026-NP-02
 ---
 # Mi az?
 
